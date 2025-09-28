@@ -30,8 +30,16 @@ A modern web forum built with Go, featuring user authentication, post creation, 
    ```
    http://localhost:8080
    ```
+   
 
 That's it! The application will automatically create the database on first run.
+
+## Screenshots
+<img width="1237" height="816" alt="image" src="https://github.com/user-attachments/assets/5b29ac06-d56d-4a56-99e5-db9711928a8c" />
+<img width="1237" height="816" alt="image" src="https://github.com/user-attachments/assets/08c42fdb-81e7-4862-bd33-060d426c4708" />
+<img width="1237" height="816" alt="image" src="https://github.com/user-attachments/assets/c9231ad4-c78c-499e-8c89-d7c116642720" />
+<img width="1237" height="816" alt="image" src="https://github.com/user-attachments/assets/0f9f5c0c-14fe-4bf7-a0c6-a5d9d8749575" />
+
 
 ## 📁 Project Structure
 
