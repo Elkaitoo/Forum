@@ -1,0 +1,49 @@
+/* CSS Variables - Design Tokens */
+:root {
+    /* Colors */
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    --success-gradient: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    --background-gradient: linear-gradient(135deg, #2d1b69 0%, #11047a 50%, #1e40af 100%);
+    
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-hover: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-hover: rgba(255, 255, 255, 0.2);
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --text-disabled: rgba(255, 255, 255, 0.5);
+    
+    /* Accent Colors */
+    --accent-purple: #a78bfa;
+    --accent-blue: #60a5fa;
+    --accent-green: #4ade80;
+    --accent-red: #f87171;
+    
+    /* Shadows */
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Border Radius */
+    --radius-small: 8px;
+    --radius-medium: 15px;
+    --radius-large: 20px;
+    --radius-pill: 50px;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+}

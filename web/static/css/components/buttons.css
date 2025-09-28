@@ -1,0 +1,218 @@
+/* Button Components */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    font-family: inherit;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Button Variants */
+.btn-primary {
+    background: var(--primary-gradient);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: var(--glass-bg-hover);
+    color: var(--text-primary);
+}
+
+.btn-danger {
+    background: var(--secondary-gradient);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #d63031 100%);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* Button Sizes */
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    border-radius: var(--radius-large);
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    border-radius: 60px;
+}
+
+/* Reaction Button Icons */
+.btn-icon {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: var(--radius-large);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: var(--transition-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-icon:hover {
+    background: var(--glass-bg-hover);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* Reaction Button States */
+.btn-icon.liked,
+.btn-icon:hover.liked {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.4);
+    color: var(--accent-green);
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+}
+
+.btn-icon.disliked,
+.btn-icon:hover.disliked {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: var(--accent-red);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* Specific Button Types */
+.like-btn {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+    color: var(--accent-green) !important;
+}
+
+.like-btn:hover {
+    background: rgba(34, 197, 94, 0.2) !important;
+    border-color: rgba(34, 197, 94, 0.4) !important;
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+}
+
+.dislike-btn {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: var(--accent-red) !important;
+}
+
+.dislike-btn:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: rgba(239, 68, 68, 0.4) !important;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+.comment-btn {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: #818cf8;
+}
+
+.comment-btn:hover {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Action Button */
+.action-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: var(--radius-large);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: var(--transition-medium);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.action-btn:hover {
+    background: var(--glass-bg-hover);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* Logout Button */
+.btn-logout {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: var(--accent-red) !important;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    border-radius: var(--radius-large);
+    transition: var(--transition-medium);
+}
+
+.btn-logout:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: rgba(239, 68, 68, 0.4) !important;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-logout:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn-logout:disabled:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    box-shadow: none;
+    transform: none !important;
+}

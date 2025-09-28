@@ -1,0 +1,166 @@
+/* Forum Pages */
+
+/* Forum Header */
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--space-lg) 0;
+    padding: var(--space-lg);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    position: relative;
+    overflow: hidden;
+}
+
+.forum-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.forum-header h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #fff, var(--accent-purple), #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+/* Filters */
+.filters {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.filters::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.filters h3 {
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: var(--glass-bg);
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: var(--transition-slow);
+    border: 1px solid var(--glass-border);
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.filter-btn:hover::before {
+    left: 100%;
+}
+
+.filter-btn:hover {
+    background: var(--glass-bg-hover);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn.active {
+    background: var(--primary-gradient);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Posts Container */
+.posts-container {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+/* No Posts Message */
+.no-posts {
+    text-align: center;
+    padding: 4rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.no-posts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.no-posts h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.no-posts p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}

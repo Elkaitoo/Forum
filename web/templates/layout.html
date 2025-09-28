@@ -1,0 +1,49 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} - Forum</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="icon" type="image/png" href="/static/img/reactions/titleimage.jpg">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="nav-brand">Forum</a>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    {{if .User}}
+                        <li><a href="/create-post">Create Post</a></li>
+                        <li><a href="/my-posts">My Posts</a></li>
+                        <li><a href="/liked-posts">Liked Posts</a></li>
+                        <li class="user-info">Welcome 👋, {{.User.Username}}</li>
+                        <li>
+                            <form method="POST" action="/logout" style="display: inline;">
+                                <button type="submit" class="btn btn-logout">Logout</button>
+                            </form>
+                        </li>
+                    {{else}}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    {{end}}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        {{template "content" .}}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Forum. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+{{end}}

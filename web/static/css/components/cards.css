@@ -1,0 +1,193 @@
+/* Card Components */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 
+        var(--shadow-heavy),
+        0 0 30px rgba(102, 126, 234, 0.2);
+}
+
+.card-header {
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Post Card Specific */
+.post-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.post-card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 
+        var(--shadow-heavy),
+        0 0 30px rgba(102, 126, 234, 0.2);
+}
+
+.post-header h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.post-header h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: var(--transition-medium);
+}
+
+.post-header h3 a:hover {
+    background: linear-gradient(45deg, var(--accent-purple), #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-sm);
+}
+
+.post-meta .author {
+    color: var(--accent-purple);
+    font-weight: 600;
+}
+
+.post-meta .date {
+    position: relative;
+    padding-left: var(--space-sm);
+}
+
+.post-meta .date::before {
+    content: '•';
+    position: absolute;
+    left: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.post-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.post-categories {
+    margin-bottom: var(--space-md);
+}
+
+.category-tag {
+    display: inline-block;
+    background: rgba(167, 139, 250, 0.2);
+    color: var(--accent-purple);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-large);
+    font-size: 0.8rem;
+    margin-right: var(--space-xs);
+    margin-bottom: var(--space-xs);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    transition: var(--transition-medium);
+}
+
+.category-tag:hover {
+    background: rgba(167, 139, 250, 0.3);
+    transform: translateY(-2px);
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--glass-border);
+}
+
+.post-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--glass-border);
+}
+
+.like-form {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.stats-readonly {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.comments {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

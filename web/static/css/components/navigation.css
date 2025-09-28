@@ -1,0 +1,89 @@
+/* Navigation Component */
+.navbar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-top: none;
+    color: var(--text-primary);
+    padding: var(--space-sm) 0;
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition-medium);
+}
+
+.navbar:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: var(--transition-medium);
+    position: relative;
+}
+
+.nav-brand::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: width var(--transition-medium);
+}
+
+.nav-brand:hover::after {
+    width: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-large);
+    transition: var(--transition-slow);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--text-primary);
+    background: var(--glass-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--glass-bg);
+    border-radius: var(--radius-large);
+    backdrop-filter: blur(10px);
+}

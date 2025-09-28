@@ -1,0 +1,111 @@
+/* Authentication Pages */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: var(--space-lg);
+}
+
+.auth-form {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: var(--space-xl);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+}
+
+.auth-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.auth-form .form-group {
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.auth-form .form-group label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.auth-form .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-small);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition-medium);
+    backdrop-filter: blur(10px);
+}
+
+.auth-form .form-group input:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    background: var(--glass-bg-hover);
+    box-shadow: 
+        0 0 20px rgba(167, 139, 250, 0.3),
+        inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.auth-form .form-group input::placeholder {
+    color: var(--text-disabled);
+}
+
+.auth-form .form-group small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: var(--space-xs);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: var(--space-lg);
+}
+
+.auth-link a {
+    color: var(--accent-purple);
+    text-decoration: none;
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-large);
+    transition: var(--transition-medium);
+    display: inline-block;
+}
+
+.auth-link a:hover {
+    background: rgba(167, 139, 250, 0.1);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} - Forum</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="icon" type="image/png" href="/static/img/reactions/titleimage.jpg">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="nav-brand">Forum</a>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    {{if .User}}
+                        <li><a href="/create-post">Create Post</a></li>
+                        <li><a href="/my-posts">My Posts</a></li>
+                        <li><a href="/liked-posts">Liked Posts</a></li>
+                        <li class="user-info">Welcome 👋, {{.User.Username}}</li>
+                        <li>
+                            <form method="POST" action="/logout" style="display: inline;" onsubmit="return confirm('Are you sure you want to logout?')">
+                                <button type="submit" class="btn btn-logout">Logout</button>
+                            </form>
+                        </li>
+                    {{else}}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    {{end}}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="forum-header">
+            <h1>Forum Posts</h1>
+            {{if .User}}
+                <a href="/create-post" class="btn btn-primary">Create New Post</a>
+            {{end}}
+        </div>
+
+        {{if .Success}}
+            <div class="alert alert-success">{{.Success}}</div>
+        {{end}}
+
+        <!-- Filter Section -->
+        <div class="filters">
+            <h3>Filter Posts:</h3>
+            <div class="filter-options">
+                <a href="/" class="filter-btn {{if not .Filter}}active{{end}}">All Posts</a>
+                {{range .Categories}}
+                    <a href="/?category={{.Name}}" class="filter-btn {{if eq $.Filter .Name}}active{{end}}">{{.Name}}</a>
+                {{end}}
+                {{if .User}}
+                    <a href="/my-posts" class="filter-btn {{if eq .Filter "my-posts"}}active{{end}}">My Posts</a>
+                    <a href="/liked-posts" class="filter-btn {{if eq .Filter "liked-posts"}}active{{end}}">Liked Posts</a>
+                {{end}}
+            </div>
+        </div>
+
+        <!-- Posts Section -->
+        <div class="posts-container">
+            {{if .Posts}}
+                {{range .Posts}}
+                <article class="post-card" id="post-{{.ID}}">
+                    <div class="post-header">
+                        <h3><a href="/post/{{.ID}}">{{.Title}}</a></h3>
+                        <div class="post-meta">
+                            <span class="author">by {{.Username}}</span>
+                            <span class="date">{{timeAgo .CreatedAt}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>{{.Content}}</p>
+                    </div>
+                    
+                    <div class="post-categories">
+                        {{range .Categories}}
+                            <span class="category-tag">{{.}}</span>
+                        {{end}}
+                    </div>
+                    
+                    <div class="post-stats">
+                        <div class="likes">
+                            {{if $.User}}
+                                <form method="POST" action="/like-post" class="like-form">
+                                    <input type="hidden" name="post_id" value="{{.ID}}">
+                                    <input type="hidden" name="anchor" value="post-{{.ID}}">
+                                    <button type="submit" name="action" value="like" class="btn-icon like-btn {{if .UserLiked}}liked{{end}}">
+                                        <img src="/static/img/reactions/+1.png" alt="Like" class="reaction-icon"> {{.LikesCount}}
+                                    </button>
+                                    <button type="submit" name="action" value="dislike" class="btn-icon dislike-btn {{if .UserDisliked}}disliked{{end}}">
+                                        <img src="/static/img/reactions/-1.png" alt="Dislike" class="reaction-icon"> {{.DislikesCount}}
+                                    </button>
+                                </form>
+                            {{else}}
+                                <span class="stats-readonly">
+                                    <img src="/static/img/reactions/+1.png" alt="Like" class="reaction-icon"> {{.LikesCount}} 
+                                    <img src="/static/img/reactions/-1.png" alt="Dislike" class="reaction-icon"> {{.DislikesCount}}
+                                </span>
+                            {{end}}
+                        </div>
+                        <div class="comments">
+                            <a href="/post/{{.ID}}" class="action-btn comment-btn">
+                                <img src="/static/img/reactions/speech_balloon.png" alt="Comments" class="reaction-icon"> {{.CommentsCount}} comments
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                {{end}}
+            {{else}}
+                <div class="no-posts">
+                    <h3>No posts found</h3>
+                    <p>{{if .User}}Be the first to create a post!{{else}}Please log in to create posts.{{end}}</p>
+                </div>
+            {{end}}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Forum. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,260 @@
+/* Post Detail Page */
+.post-detail-container {
+    max-width: 800px;
+    margin: var(--space-lg) auto;
+}
+
+.post-detail {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.post-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.post-detail .post-header h1 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.post-detail .post-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: var(--space-md) 0;
+    color: var(--text-secondary);
+}
+
+.post-detail .post-actions {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--glass-border);
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+
+.like-form {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.delete-form {
+    margin-left: auto;
+}
+
+.delete-form .btn {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+    background: transparent !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    color: var(--accent-red) !important;
+    transition: var(--transition-medium);
+}
+
+.delete-form .btn:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.7) !important;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Comments Section */
+.comments-section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.comments-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.comments-section h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.add-comment {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-medium);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.add-comment h4 {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    font-weight: 600;
+}
+
+/* Comments List */
+.comments-list {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.comment {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: var(--space-lg);
+    border-radius: var(--radius-medium);
+    border-left: 4px solid var(--accent-purple);
+    transition: var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.comment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.comment:hover {
+    background: var(--glass-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+}
+
+.comment-author {
+    font-weight: 700;
+    color: var(--accent-purple);
+    font-size: 1rem;
+}
+
+.comment-date {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.comment-content {
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.comment-actions {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.comment-actions .action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: var(--space-sm);
+}
+
+.comment-actions .like-form {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.delete-comment-form {
+    margin-left: auto;
+}
+
+.btn-delete-comment {
+    background: transparent !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: var(--accent-red) !important;
+    padding: 6px 10px;
+    font-size: 0.875rem;
+    border-radius: var(--radius-small);
+    transition: var(--transition-medium);
+    cursor: pointer;
+}
+
+.btn-delete-comment:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.5) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(239, 68, 68, 0.3);
+}
+
+.no-comments {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: var(--space-xl);
+    font-size: 1.1rem;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: var(--space-lg);
+}
+
+.back-link a {
+    color: var(--accent-purple);
+    text-decoration: none;
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    background: rgba(167, 139, 250, 0.1);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 25px;
+    transition: var(--transition-medium);
+    display: inline-block;
+}
+
+.back-link a:hover {
+    background: rgba(167, 139, 250, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(167, 139, 250, 0.3);
+}
